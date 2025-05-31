@@ -24,3 +24,9 @@ npm install -D vitest
 npm run test:run
 npm test
 ```
+
+# Create assemblys
+
+```shell
+npx vite build
+```
