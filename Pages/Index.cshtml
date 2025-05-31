@@ -38,20 +38,39 @@
 
 <div class="max-w-4xl mx-auto mt-8 bg-white p-6 rounded-lg shadow-lg">
     <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Lista de Empleados</h2>
+   
+   @if(Model.Empleados.Count() > 0)
+   {
+     <!-- Lista de empleados -->
+   <div class="overflow-x-auto">
+        <ul id="empleados" class="divide-y divide-gray-200">
+            <!-- Los elementos de la lista se agregarán dinámicamente aquí -->
+        </ul>
+    </div>
+       <p class="text-gray-600 mb-4"> <span id="totalEmpleados">Total de empleados: @Model.Empleados.Count()</span></p>
+   }
+   else
+   {
     <div class="overflow-x-auto">
         <ul id="empleados" class="divide-y divide-gray-200">
             <!-- Los elementos de la lista se agregarán dinámicamente aquí -->
         </ul>
     </div>
-    <!-- Mensaje cuando no hay datos -->
+     <p class="text-gray-600 mb-4"> <span id="totalEmpleados"></span></p>
+        <!-- Mensaje cuando no hay datos -->
     <div id="noData" class="text-center py-8 text-gray-500">
         <p class="text-lg">No hay empleados registrados</p>
     </div>
+   }
+
+   
+   
 </div>
 
 @section Scripts {
     <script type="module" src="~/dist/main.js"></script>
-    <script>       
+    <script>
+        window.initialEmployeeCount = @Model.Empleados.Count();            
     </script>
     <partial name="_ValidationScriptsPartial" />
 }
