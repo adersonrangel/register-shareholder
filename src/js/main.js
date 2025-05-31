@@ -3,11 +3,15 @@ import { Empleado } from "../uc/empleados/Empleado";
 const btnCrear = document.getElementById("btnAddUser");
 
 btnCrear?.addEventListener("click", () => {
-  agregarEmpleado();
+  const txtNombre = document.getElementById("txtNombre").value;
+  const txtApellido = document.getElementById("txtApellido").value;
+  const txtEdad = document.getElementById("txtEdad").value;
+
+  agregarEmpleado(txtNombre, txtApellido, txtEdad);
 });
 
-function agregarEmpleado() {
-  let empleado1 = new Empleado("Aderson", "Pérez", 30);
+function agregarEmpleado(nombre, apellido, edad) {
+  let empleado1 = new Empleado(nombre, apellido, edad);
   console.log(empleado1.nombre); // Juan
 
   let listaEmpleados = document.getElementById("empleados");
