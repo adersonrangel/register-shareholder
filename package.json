@@ -4,7 +4,9 @@
   "description": "Configuration Steps",
   "main": "index.js",
   "scripts": {
-    "twd": "npx @tailwindcss/cli -i ./src/css/site.css -o ./wwwroot/css/site.css --watch"
+    "twd": "npx @tailwindcss/cli -i ./src/css/site.css -o ./wwwroot/css/site.css --watch",
+    "test": "vitest",
+    "test:run": "vitest run"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,8 @@
   },
   "homepage": "https://github.com/adersonrangel/register-shareholder#readme",
   "devDependencies": {
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vitest": "^3.1.4"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.8",

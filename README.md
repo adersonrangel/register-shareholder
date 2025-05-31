@@ -15,3 +15,12 @@ Use Tailwindcss CLI the simplest and fastest way to get up and running with Tail
 ```shell
 npm install tailwindcss @tailwindcss/cli
 ```
+
+# Vitest Configuration
+
+```shell
+npm install -D vitest
+
+npm run test:run
+npm test
+```
