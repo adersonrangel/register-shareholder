@@ -4,7 +4,7 @@
   "description": "Configuration Steps",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "twd": "npx @tailwindcss/cli -i ./src/css/site.css -o ./wwwroot/css/site.css --watch"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,9 @@
   "homepage": "https://github.com/adersonrangel/register-shareholder#readme",
   "devDependencies": {
     "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.8",
+    "tailwindcss": "^4.1.8"
   }
 }

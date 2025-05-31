@@ -4,7 +4,23 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="bg-amber-400 p-4 m-2 rounded-lg shadow-md">
+<p>
+    Welcome to the home page of our ASP.NET Core application! This is a simple example of how to create a basic Razor Page. 
+</p>
 </div>
+<button class="bg-amber-600 rounded-lg p-2 m-2" id="btnAddUser">Crear</button>
+<div>
+    <h2>Available Links</h2>
+   
+    <h2>Sample Data</h2>
+    <ul id="empleados">
+    </ul
+</div>
+
+@section Scripts {
+    <script type="module" src="~/dist/main.js"></script>
+    <script>       
+    </script>
+    <partial name="_ValidationScriptsPartial" />
+}
