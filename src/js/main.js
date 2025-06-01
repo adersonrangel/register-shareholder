@@ -24,7 +24,7 @@ form?.addEventListener("submit", (e) => {
   // Verificar mensajes de validación existentes
   const validationSpans = document.querySelectorAll("[data-valmsg-for]");
   validationSpans.forEach((span) => {
-    if (span.textContent !== "") {
+    if (span.textContent.trim() !== "") {
       isFormValid = false;
     }
   });
