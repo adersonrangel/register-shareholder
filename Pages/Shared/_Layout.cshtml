@@ -8,7 +8,63 @@
 </head>
 <body>
     <header>
-        
+        <nav class="bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+            <div class="flex space-x-7">
+                <div>
+                    <a class="flex items-center py-4 px-2" href="">
+                        <span class="font-semibold text-gray-500 text-lg">Register Shareholder</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button id="menuHamburguer" type="button" class="outline-none mobile-menu-button">
+                    <svg class="w-6 h-6 text-gray-500 hover:text-blue-600"
+                         fill="none"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         stroke-width="2"
+                         viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Primary Nav -->
+            <div class="hidden md:flex items-center space-x-1">
+                <a class="py-4 px-2 text-gray-500 hover:text-blue-600 transition duration-300" 
+                         href="/" Match="aMatch.All">
+                    Home
+                </a>
+                <a class="py-4 px-2 text-gray-500 hover:text-blue-600 transition duration-300" 
+                         href="List">
+                    List
+                </a>
+                <a class="py-4 px-2 text-gray-500 hover:text-blue-600 transition duration-300" 
+                         href="about">
+                    About
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="menuMobile" class="md:hidden">
+        <a class="block py-2 px-4 text-sm hover:bg-gray-200" href="/" Match="aMatch.All">
+            Home
+        </a>
+        <a class="block py-2 px-4 text-sm hover:bg-gray-200" href="List">
+            List
+        </a>
+        <a class="block py-2 px-4 text-sm hover:bg-gray-200" href="about">
+            About
+        </a>
+    </div>
+</nav>
     </header>
     
     <div>
@@ -26,5 +82,17 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script> 
 
     @await RenderSectionAsync("Scripts", required: false)
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const btn = document.getElementById('menuHamburguer');
+        const menu = document.getElementById('menuMobile');
+        if (btn && menu) {                 
+            btn.addEventListener('click', function () {
+               menu.classList.toggle('hidden');
+            });
+        }
+    });
+</script>
 </body>
 </html>
+
