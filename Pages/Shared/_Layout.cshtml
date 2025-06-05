@@ -84,8 +84,9 @@
     @await RenderSectionAsync("Scripts", required: false)
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const btn = document.getElementById('menuHamburguer');
-        const menu = document.getElementById('menuMobile');
+         const btn = document.querySelector('#menuHamburguer');
+        const menu = document.querySelector('#menuMobile');
+        menu.classList.add('hidden'); // Hide the menu by default
         if (btn && menu) {                 
             btn.addEventListener('click', function () {
                menu.classList.toggle('hidden');
